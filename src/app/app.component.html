@@ -1,0 +1,61 @@
+
+<!--cards showing the results of what the user likes-->
+
+<header Access-Control-Allow-Origin: *>
+</header>
+
+
+<div>
+  <ul class="navBar">
+    <li class="link"><a href="default.asp">Home</a></li>
+    <li class="link"><a href="news.asp">News</a></li>
+    <li class="link"><a href="contact.asp">Contact</a></li>
+    <li class="link"><a href="about.asp">About</a></li>
+  </ul> 
+</div>
+
+
+<div>
+  <div class="topRestaurants">
+    <h2>
+      Top Restaurants:
+    </h2>
+    <div class='topList'>
+      <ul>
+        <li *ngFor="let post of posts | async">
+          {{ post["userId"] | json }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="otherList">
+    <h2>
+      Other List:
+    </h2>
+      <div class='topList'>
+        <ul>
+          <li *ngFor="let post of posts | async">
+            {{ post["body"] | json }}
+          </li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+<div>
+  <div>
+  <h1>Testing posts</h1>
+    <button (click)="getPosts()">Get Posts</button> 
+    <button (click)="sendPosts()">Send Posts</button> 
+    {{ newPost | async | json }}
+  </div>
+
+  <div>
+    <h1>Testing the slider</h1>
+    <div class="slider">
+      <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
+    </div>
+  </div>
+
+</div>
+
