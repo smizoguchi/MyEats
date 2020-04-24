@@ -13,7 +13,7 @@ export class AppComponent {
   name = "Angular";
   public restList: { name: string }[] = restaurants;
 
-  readonly ROOT_URL = "15.223.68.165";
+  readonly ROOT_URL = "https://jsonplaceholder.typicode.com/todos/1";
 
   posts: Observable<any>;
   newPost: Observable<any>;
